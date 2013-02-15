@@ -1,0 +1,23 @@
+{
+  "name": "aws-spot-price-history",
+  "description": "",
+  "author": "",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iantruslove/BLAH.git"
+  },
+  "dependencies": {
+    "persist": "~0.2.6",
+    "aws2js": "~0.8.1",
+    "sqlite3": "~2.1.5",
+    "express": "~3.1.0",
+    "db-migrate": "~0.3.2",
+    "async": "~0.2.5"
+  },
+  "devDependencies": {}
+}
