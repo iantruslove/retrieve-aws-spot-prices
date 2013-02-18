@@ -30,8 +30,7 @@
   "devDependencies": {
     "grunt": "~0.3.17",
     "jasmine-node": "~1.2.3",
-    "grunt-jasmine-node": "0.0.6",
-    "grunt-contrib-coffee": "~0.3.2"
+    "grunt-exec": "~0.3.0"
   },
   "keywords": []
 }

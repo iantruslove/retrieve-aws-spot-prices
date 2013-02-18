@@ -4,32 +4,17 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: '<json:package.json>',
-    clean: ["dist", "build.spec"],
     lint: {
       files: ['grunt.js', 'lib/**/*.js', 'spec/**/*.js']
     },
-    jasmine_node: {
-      specNameMatcher: "spec",
-      projectRoot: ".",
-      coffee: true,
-      requirejs: false,
-      forceExit: true,
-      jUnit: {
-        report: false,
-        savePath : "./build/reports/jasmine/",
-        useDotNotation: true,
-        consolidate: true
-      }
-    },
-    coffee: {
+    exec: {
       spec: {
-        files: {
-          'build.spec/*.js': ['spec/*.coffee'] // compile individually into dest, maintaining folder structure
-        }
+        command: 'jasmine-node --coffee spec',
+        stdout: true
       }
     },
     watch: {
-      files: '<config:lint.files>',
+      files: ['<config:lint.files>', 'spec/**/*.coffee'],
       tasks: 'default'
     },
     jshint: {
@@ -47,17 +32,16 @@ module.exports = function (grunt) {
         node: true
       },
       globals: {
-        exports: true
+        exports: true,
+        exec: true
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-jasmine-node');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-exec');
 
   // Default task.
-  grunt.registerTask('spec', 'coffee:spec jasmine_node');
+  grunt.registerTask('spec', 'exec:spec');
   grunt.registerTask('default', 'lint spec');
-
 };
+
