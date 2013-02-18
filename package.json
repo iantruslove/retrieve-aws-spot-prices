@@ -1,23 +1,37 @@
 {
   "name": "aws-spot-price-history",
-  "description": "",
-  "author": "",
+  "description": "Visualizations of historical AWS spot prices",
   "version": "0.0.1",
-  "engines": {
-    "node": ">=0.6.0"
+  "homepage": "",
+  "author": {
+    "name": "Ian Truslove",
+    "email": "ian@cloudclearly.com"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iantruslove/BLAH.git"
+    "url": "https://iantruslove@bitbucket.org/iantruslove/aws-spot-price-history.git"
   },
-  "dependencies": {
-    "persist": "~0.2.6",
-    "aws2js": "~0.8.1",
-    "sqlite3": "~2.1.5",
-    "express": "~3.1.0",
-    "db-migrate": "~0.3.2",
-    "async": "~0.2.5"
+  "bugs": {
+    "url": ""
   },
-  "devDependencies": {}
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/aws-spot-price-history",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.17",
+    "jasmine-node": "~1.2.3",
+    "grunt-jasmine-node": "0.0.6",
+    "grunt-contrib-coffee": "~0.3.2"
+  },
+  "keywords": []
 }
