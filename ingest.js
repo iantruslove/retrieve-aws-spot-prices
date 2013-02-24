@@ -1,4 +1,5 @@
 // ingest.js - command line interface to retrieve and ingest spot price data from AWS
+"use strict";
 
 // options:
 // - --startTime <time>, -s <time> - 
@@ -7,19 +8,12 @@
 // - --availabilityZone <zone>, -z <zone> - 
 var async = require('async');
 var persist = require('persist');
-persist.env = 'dev';
+
+var PriceObject = require('./lib/models/price-object');
 
 var awsQueryOptions, accessKeyId, secretAccessKey, testingMode = false;
 
-var type = persist.type;
-var PriceObject = persist.define("PriceObject", {
-  instanceType: type.STRING,
-  productDescription: type.STRING,
-  spotPrice: type.REAL,
-  timestamp: type.DATETIME,
-  availabilityZone: type.STRING
-});
-
+persist.env = 'dev';
 
 function parseArgs(args) {
   var options = {};
@@ -129,10 +123,6 @@ var dataStoreQueue = (function () {
     };
 
     this.q = async.queue(queueAction.bind(this), 0); // start queue with no workers
-
-    this.q.drain = function () {
-      console.log("All data processed");
-    }
 
     var connect_callback = function (err, connection) {
       if (err) {
