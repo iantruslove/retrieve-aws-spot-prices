@@ -5,7 +5,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: '<json:package.json>',
     lint: {
-      files: ['grunt.js', 'lib/**/*.js', 'spec/**/*.js']
+      files: ['*.js', 'lib/**/*.js', 'spec/**/*.js']
     },
     exec: {
       spec: {
