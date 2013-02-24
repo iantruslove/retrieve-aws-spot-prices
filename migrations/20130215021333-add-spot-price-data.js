@@ -22,8 +22,8 @@ var initialPriceData = [
 
 exports.up = function(db, callback) {
   var iterator = function (priceData, callback) {
-    db.insert('SpotPrices',
-        ['timestamp', 'price', 'instanceType', 'productDescription', 'availabilityZone'],
+    db.insert('PriceObjects',
+        ['timestamp', 'spot_price', 'instance_type', 'product_description', 'availability_zone'],
         priceData,
         callback);
   };
@@ -32,5 +32,5 @@ exports.up = function(db, callback) {
 };
 
 exports.down = function(db, callback) {
-  db.runSql('DELETE FROM SpotPrices', callback);
+  db.runSql('DELETE FROM PriceObjects', callback);
 };

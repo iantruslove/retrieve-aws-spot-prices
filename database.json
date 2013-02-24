@@ -1,7 +1,10 @@
 {
+  "default":"dev",
+
   "dev": {
     "driver": "sqlite3",
-    "filename": "./run/dev.db"
+    "trace": true,
+    "filename": "./dev.db"
   },
 
   "test": {
