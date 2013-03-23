@@ -1,5 +1,5 @@
 {
-  "name": "aws-spot-price-history",
+  "name": "retrieve-aws-spot-prices",
   "description": "Visualizations of historical AWS spot prices",
   "version": "0.0.1",
   "homepage": "",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://iantruslove@bitbucket.org/iantruslove/aws-spot-price-history.git"
+    "url": "git@github.com:iantruslove/retrieve-aws-spot-prices.git"
   },
   "bugs": {
     "url": ""
@@ -20,7 +20,7 @@
       "url": "/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/aws-spot-price-history",
+  "main": "lib/retrieve-aws-spot-prices",
   "engines": {
     "node": ">= 0.6.0"
   },
@@ -40,6 +40,7 @@
     "sqlite3": "~2.1.5",
     "aws2js": "~0.8.1",
     "db-migrate": "~0.3.2",
-    "async": "~0.2.5"
+    "async": "~0.2.5",
+    "socket.io": "~0.9.13"
   }
 }

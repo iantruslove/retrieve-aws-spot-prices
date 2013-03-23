@@ -1,4 +1,4 @@
-#service = require '../../lib/aws/spot-price-service.js'
+#service = require '../../lib/aws/retrieve-aws-spot-prices.js'
 
 describe "AWS Spot Price service", ->
 
